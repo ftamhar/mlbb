@@ -1,0 +1,9 @@
+version: "3.1"
+services:
+  testnats:
+    image: nats:latest
+    restart: always
+    ports:
+      - 8222:8222
+      - 6222:6222
+      - 4222:4222

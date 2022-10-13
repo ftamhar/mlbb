@@ -1,0 +1,28 @@
+syntax = "proto3";
+package services;
+option go_package = "c/proto/hello";
+
+// import "google/protobuf/empty.proto";
+
+service HelloServices {
+  rpc Greeting(GreetingRequest) returns (GreetingResponse) {};
+  rpc Upload(stream UploadRequest) returns (UploadResponse) {};
+  rpc Upload2(UploadRequest) returns (UploadResponse) {};
+}
+
+message GreetingRequest {
+  string firstname = 1;
+  string lastname = 2;
+}
+
+message GreetingResponse {
+  string fullname = 1;
+}
+
+message UploadRequest {
+  bytes data = 1;
+}
+
+message UploadResponse {
+  string name = 1;
+}
